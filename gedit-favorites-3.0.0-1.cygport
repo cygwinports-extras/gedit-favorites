@@ -1,0 +1,18 @@
+GIT_URI="git://github.com/Quixotix/${PN}.git"
+#GIT_TAG="v${PV}"
+inherit git python
+
+src_compile() { :; }
+
+src_install() {
+	local plugindir="/usr/lib/gedit/plugins"
+
+	cd ${S}
+	insinto ${plugindir}
+	doins ${PN#gedit-}.plugin
+	insinto ${plugindir}/${PN#gedit-}
+	cp -r ${PN#gedit-}/ ${D}${plugindir}/
+	python_optimize ${plugindir}
+}
+
+DOCS="README.markdown"
