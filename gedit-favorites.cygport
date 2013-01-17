@@ -2,6 +2,17 @@ GIT_URI="git://github.com/Quixotix/${PN}.git"
 #GIT_TAG="v${PV}"
 inherit git python
 
+NAME="gedit-favorites"
+VERSION=3.0.0
+RELEASE=2
+CATEGORY="Editors"
+SUMMARY="Gedit favorite document manager"
+DESCRIPTION="A plugin for Gedit 3 that allows you to save and organize your 
+favorite documents for quick access."
+HOMEPAGE="https://github.com/Quixotix"
+
+REQUIRES="gedit girepository-Gtk3.0"
+
 src_compile() { :; }
 
 src_install() {
